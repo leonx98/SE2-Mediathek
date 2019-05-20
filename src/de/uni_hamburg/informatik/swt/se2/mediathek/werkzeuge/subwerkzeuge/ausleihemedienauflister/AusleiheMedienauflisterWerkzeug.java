@@ -8,6 +8,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.VormerkKarte;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.ServiceObserver;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.medienbestand.MedienbestandService;
@@ -86,6 +87,10 @@ public class AusleiheMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // der Name des Vormerkers, an den ein Medium ausgeliehen werden
             // darf, gemäß Anforderung d).
             Kunde ersterVormerker = null;
+            if (_verleihService.istVormerkKarteVorhanden(medium)) {
+            	VormerkKarte karte = _verleihService.getVormerkKarteFuer(medium);
+            	ersterVormerker = karte.getVormerker(1);
+            }
 
             medienFormatierer.add(new AusleiheMedienFormatierer(medium,
                     istVerliehen, ersterVormerker));

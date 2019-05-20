@@ -11,3 +11,133 @@ am 20.5.2019 verliehen an
     Anschrift:
     Fightstreet 99
     60311 Frankfurt
+Mon May 20 22:54:11 CEST 2019: Ausleihe
+CD:
+    Titel: Wincing the Night Away
+    Kommentar: Die fleißigsten Slacker der Indie-Szene 
+    Interpret: the Shins
+    Spiellänge: 69
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 22:54:11 CEST 2019: Ausleihe
+DVD:
+    Titel: Hellboy
+    Kommentar: Red - der dämonische Held aus der Unterwelt
+    Regisseur: Guillermo Del Toro
+    Laufzeit: 110
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 22:54:11 CEST 2019: Ausleihe
+DVD:
+    Titel: James Bond - Ein Quantum Trost
+    Kommentar: Ein Quantum Trost setzt da an, wo Casino Royale endet
+    Regisseur: Marc Forster
+    Laufzeit: 110
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 22:54:25 CEST 2019: Ausleihe
+DVD:
+    Titel: James Bond - Ein Quantum Trost
+    Kommentar: Ein Quantum Trost setzt da an, wo Casino Royale endet
+    Regisseur: Marc Forster
+    Laufzeit: 110
+am 20.5.2019 verliehen an
+    Kundennummer: 123460
+    Name: Katarina Klum
+    Telefon: unbekannt
+    Anschrift:
+    Ottensener Strasse 10
+    22761 Hamburg
+Mon May 20 22:59:30 CEST 2019: Ausleihe
+CD:
+    Titel: Wincing the Night Away
+    Kommentar: Die fleißigsten Slacker der Indie-Szene 
+    Interpret: the Shins
+    Spiellänge: 69
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 22:59:30 CEST 2019: Ausleihe
+DVD:
+    Titel: Hellboy
+    Kommentar: Red - der dämonische Held aus der Unterwelt
+    Regisseur: Guillermo Del Toro
+    Laufzeit: 110
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 22:59:30 CEST 2019: Ausleihe
+DVD:
+    Titel: James Bond - Ein Quantum Trost
+    Kommentar: Ein Quantum Trost setzt da an, wo Casino Royale endet
+    Regisseur: Marc Forster
+    Laufzeit: 110
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Mon May 20 23:54:05 CEST 2019: Ausleihe
+CD:
+    Titel: Disturbia
+    Kommentar: gut
+    Interpret: Rihanna
+    Spiellänge: 90
+am 20.5.2019 verliehen an
+    Kundennummer: 123458
+    Name: Klaus Müller
+    Telefon: unbekannt
+    Anschrift:
+    Müllerweg 1
+    22760 Hamburg
+Tue May 21 00:11:12 CEST 2019: Ausleihe
+CD:
+    Titel: Garden State
+    Kommentar: Soundtrack
+    Interpret: Various
+    Spiellänge: 56
+am 20.5.2019 verliehen an
+    Kundennummer: 123457
+    Name: Kai Konrad
+    Telefon: unbekannt
+    Anschrift:
+    Kannenweg 23
+    21868 Stade
+Tue May 21 00:30:07 CEST 2019: Ausleihe
+CD:
+    Titel: Breakaway
+    Kommentar: Nachfolger vom Album Tankful
+    Interpret: Kelly Clarkson
+    Spiellänge: 87
+am 20.5.2019 verliehen an
+    Kundennummer: 123462
+    Name: John Rambo
+    Telefon: unbekannt
+    Anschrift:
+    Fightstreet 99
+    60311 Frankfurt

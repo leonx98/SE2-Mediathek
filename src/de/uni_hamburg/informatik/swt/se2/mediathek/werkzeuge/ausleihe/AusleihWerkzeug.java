@@ -217,6 +217,12 @@ public class AusleihWerkzeug
         // Anforderung d).
         boolean ausleiheMoeglich = (kunde != null) && !medien.isEmpty()
                 && _verleihService.sindAlleNichtVerliehen(medien);
+        
+        if (kunde != null && !medien.isEmpty() && _verleihService.sindAlleNichtVerliehen(medien)) {
+        	if (!(_verleihService.istVerleihenMoeglich(kunde, medien))) {
+        		ausleiheMoeglich = false;
+        	}
+        }
 
         return ausleiheMoeglich;
     }

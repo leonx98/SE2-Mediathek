@@ -5,6 +5,7 @@ import java.util.List;
 import de.uni_hamburg.informatik.swt.se2.mediathek.fachwerte.Datum;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Verleihkarte;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.VormerkKarte;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.ObservableService;
 
@@ -227,5 +228,64 @@ public interface VerleihService extends ObservableService
      * @ensure (result != null)
      */
     Verleihkarte getVerleihkarteFuer(Medium medium);
+    
+    /**
+     * Gibt alle Vormerkkarten des angegebenen Kunden zurück
+     * 
+     * @param kunde Der Kunde
+     * 
+     * @require kunde != null
+     * 
+     * @return Liste aller Vormerkkarten des Kunden
+     */
+    public List<VormerkKarte> getVormerkKartenFuer(Kunde kunde);
+    
+    /**
+     * Gibt Vormerkkarte des angegebenen Mediums zurück
+     * 
+     * @param medium Das Medium
+     * 
+     * @require medium != null
+     * 
+     * @return Vormerkkarte des Mediums
+     */
+    public VormerkKarte getVormerkKarteFuer(Medium medium);
+
+    
+    /**
+     * Gibt zurück, ob vormerken für den Kunden und das Medium möglich ist
+     * 
+     * @param kunde Der Kunde
+     * @param medium Das Medium
+     * 
+     * @require kunde != null
+     * @requre medium != null
+     * 
+     * @return true, falls vormerken möglich ist
+     */
+    public boolean istVormerkenMoeglich(Kunde kunde, Medium medium);
+    
+    /**
+     * Merkt ein Medium vor für einen Kunden
+     * 
+     * @param kunde Der Kunde
+     * @param medium Das Medium
+     * 
+     * @require kunde != null
+     * @require medium != null
+     * 
+     */
+    public void vormerken(Kunde kunde, Medium medium);
+    
+    /**
+     * Prüft, ob es eine Vormerkkarte gibt für das angegebene Medium
+     * 
+     * @param medium Das Medium
+     * 
+     * @require medium != null
+     * 
+     * @return True, wenn Vormerkkarte vorhanden
+     */
+    public boolean istVormerkKarteVorhanden(Medium medium);
 
 }

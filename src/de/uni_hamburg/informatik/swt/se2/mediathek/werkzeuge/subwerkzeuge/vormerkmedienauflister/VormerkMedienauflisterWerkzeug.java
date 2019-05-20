@@ -8,6 +8,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.Kunde;
+import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.VormerkKarte;
 import de.uni_hamburg.informatik.swt.se2.mediathek.materialien.medien.Medium;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.ServiceObserver;
 import de.uni_hamburg.informatik.swt.se2.mediathek.services.medienbestand.MedienbestandService;
@@ -84,10 +85,22 @@ public class VormerkMedienauflisterWerkzeug extends ObservableSubWerkzeug
             // Entleiher und möglichen Vormerkern ausgestattet werden.
             // Ist dies korrekt implementiert, erscheinen in der Vormerkansicht
             // die Namen des Entleihers und der möglichen 3 Vormerker.
-            Kunde entleiher = null;
+        	
+        	Kunde entleiher = null;
             Kunde vormerker1 = null;
             Kunde vormerker2 = null;
             Kunde vormerker3 = null;
+
+        	if(_verleihService.istVerliehen(medium)) {
+        		entleiher = _verleihService.getEntleiherFuer(medium);
+        	}
+        	
+        	if(_verleihService.istVormerkKarteVorhanden(medium)) {
+        		VormerkKarte karte = _verleihService.getVormerkKarteFuer(medium);
+        		vormerker1 = karte.getVormerker(1);
+                vormerker2 = karte.getVormerker(2);
+                vormerker3 = karte.getVormerker(3);
+        	}
 
             medienFormatierer.add(new VormerkMedienFormatierer(medium,
                     entleiher, vormerker1, vormerker2, vormerker3));

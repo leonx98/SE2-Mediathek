@@ -109,12 +109,22 @@ public class VerleihServiceImpl extends AbstractObservableService
     @Override
     public boolean istVerleihenMoeglich(Kunde kunde, List<Medium> medien)
     {
-        assert kundeImBestand(
-                kunde) : "Vorbedingung verletzt: kundeImBestand(kunde)";
-        assert medienImBestand(
-                medien) : "Vorbedingung verletzt: medienImBestand(medien)";
-
-        return sindAlleNichtVerliehen(medien);
+        assert kundeImBestand(kunde) : "Vorbedingung verletzt: kundeImBestand(kunde)";
+        assert medienImBestand(medien) : "Vorbedingung verletzt: medienImBestand(medien)";
+        
+        if(sindAlleNichtVerliehen(medien)) {
+        	for (Medium medium : medien) {
+            	if (istVormerkKarteVorhanden(medium)) {
+            		VormerkKarte karte = getVormerkKarteFuer(medium);
+            		if(!(karte.getVormerker(1).equals(kunde))) {
+            			return false;
+            		}
+            	}
+            }
+        	return true;
+        } else {
+        	return false;
+        }
     }
 
     @Override
@@ -203,22 +213,22 @@ public class VerleihServiceImpl extends AbstractObservableService
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
             throws ProtokollierException
     {
-        assert kundeImBestand(
-                kunde) : "Vorbedingung verletzt: kundeImBestand(kunde)";
-        assert sindAlleNichtVerliehen(
-                medien) : "Vorbedingung verletzt: sindAlleNichtVerliehen(medien) ";
+        assert kundeImBestand(kunde) : "Vorbedingung verletzt: kundeImBestand(kunde)";
+        assert sindAlleNichtVerliehen(medien) : "Vorbedingung verletzt: sindAlleNichtVerliehen(medien) ";
         assert ausleihDatum != null : "Vorbedingung verletzt: ausleihDatum != null";
-        assert istVerleihenMoeglich(kunde,
-                medien) : "Vorbedingung verletzt:  istVerleihenMoeglich(kunde, medien)";
+        assert istVerleihenMoeglich(kunde, medien) : "Vorbedingung verletzt:  istVerleihenMoeglich(kunde, medien)";
 
         for (Medium medium : medien)
         {
-            Verleihkarte verleihkarte = new Verleihkarte(kunde, medium,
-                    ausleihDatum);
+            Verleihkarte verleihkarte = new Verleihkarte(kunde, medium, ausleihDatum);
 
             _verleihkarten.put(medium, verleihkarte);
-            _protokollierer.protokolliere(
-                    VerleihProtokollierer.EREIGNIS_AUSLEIHE, verleihkarte);
+            _protokollierer.protokolliere(VerleihProtokollierer.EREIGNIS_AUSLEIHE, verleihkarte);
+            
+            if (istVormerkKarteVorhanden(medium)) {
+        		VormerkKarte karte = getVormerkKarteFuer(medium);
+        		karte.removeFirstVormerker();
+        	}
         }
         // Was passiert wenn das Protokollieren mitten in der Schleife
         // schief geht? informiereUeberAenderung in einen finally Block?
@@ -337,7 +347,7 @@ public class VerleihServiceImpl extends AbstractObservableService
         		return false;
         	}
         	
-        	for(int i = 1; i <= 3; i++) {
+        	for(int i = 1; i <= vormerkkarte.getAnzahlVormerker(); i++) {
         		if (vormerkkarte.getVormerker(i).equals(kunde)) {
         			return false;
         		}

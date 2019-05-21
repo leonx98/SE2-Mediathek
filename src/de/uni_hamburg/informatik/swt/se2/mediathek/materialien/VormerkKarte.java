@@ -121,4 +121,14 @@ public class VormerkKarte {
 			_kunden.add(kunde);
 		}
 	}
+	
+	/**
+	 * Entfernt den ersten Vormerker (alle anderen rücken um einen vor)
+	 * 
+	 */
+	public void removeFirstVormerker() {
+		if (_kunden.size() >= 1) {
+			_kunden.remove(0);
+		}
+	}
 }
